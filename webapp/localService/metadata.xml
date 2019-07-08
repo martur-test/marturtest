@@ -1,0 +1,85 @@
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZUB_EGT_OMR_001_SRV" xml:lang="tr" sap:schema-version="1">
+			<EntityType Name="HeaderMaterial" sap:content-version="1">
+				<Key><PropertyRef Name="IpMatnr"/></Key><Property Name="IpDokar" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Doküman türü" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="IpMatnr" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="Malzeme" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><NavigationProperty Name="navCT_Matnr" Relationship="ZUB_EGT_OMR_001_SRV.AssCT_Matnr" FromRole="FromRole_AssCT_Matnr"
+					ToRole="ToRole_AssCT_Matnr"/><NavigationProperty Name="navE_Matnr" Relationship="ZUB_EGT_OMR_001_SRV.AssE_Matnr" FromRole="FromRole_AssE_Matnr"
+					ToRole="ToRole_AssE_Matnr"/><NavigationProperty Name="navE_Component" Relationship="ZUB_EGT_OMR_001_SRV.AssE_Component" FromRole="FromRole_AssE_Component"
+					ToRole="ToRole_AssE_Component"/><NavigationProperty Name="navE_Material" Relationship="ZUB_EGT_OMR_001_SRV.AssE_Material" FromRole="FromRole_AssE_Material"
+					ToRole="ToRole_AssE_Material"/></EntityType>
+			<EntityType Name="E_Matnr" sap:content-version="1">
+				<Key><PropertyRef Name="Matnr"/></Key><Property Name="Matnr" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="Malzeme" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="MMatnr" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="Malzeme" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="MMaktx" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Tanım" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="E_Component" sap:content-version="1">
+				<Key><PropertyRef Name="Matnr"/></Key><Property Name="Matnr" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="Malzeme" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="CDokar" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Doküman türü" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="CDoknr" Type="Edm.String" Nullable="false" MaxLength="25" sap:unicode="false" sap:label="Doküman" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="CDokvr" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Doküman vers." sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="CDoktl" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Alt doküman" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="FileName" Type="Edm.String" Nullable="false" MaxLength="255" sap:unicode="false" sap:label="Bileşen adı"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Property" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Nitelik" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="FileSize" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Büyüklük" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="BinaryFlg" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="İkili dosya" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="FirstLine" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Satır numarası"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="LastLine" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Satır numarası"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Directory" Type="Edm.String" Nullable="false" MaxLength="255" sap:unicode="false" sap:label="Dizin" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Mimetype" Type="Edm.String" Nullable="false" MaxLength="128" sap:unicode="false" sap:label="MIME tip" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Uri" Type="Edm.String" Nullable="false" MaxLength="4096" sap:unicode="false" sap:label="URI" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Class" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Doküman sınıfı"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Objid" Type="Edm.String" Nullable="false" MaxLength="32" sap:unicode="false" sap:label="Nesne tn." sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="E_Material" sap:content-version="1">
+				<Key><PropertyRef Name="Matnr"/></Key><Property Name="Matnr" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="Malzeme" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="LDokar" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Doküman türü" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="LDoknr" Type="Edm.String" Nullable="false" MaxLength="25" sap:unicode="false" sap:label="Doküman" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="LDokvr" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Doküman vers." sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="LDoktl" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Alt doküman" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="LMaktx" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Tanım" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="LVdir" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Yön" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="LObjky" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="Nesne ahtr." sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<Association Name="AssE_Component" sap:content-version="1"><End Type="ZUB_EGT_OMR_001_SRV.HeaderMaterial" Multiplicity="1" Role="FromRole_AssE_Component"/><End Type="ZUB_EGT_OMR_001_SRV.E_Component" Multiplicity="*" Role="ToRole_AssE_Component"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_AssE_Component"><PropertyRef Name="IpMatnr"/></Principal>
+					<Dependent Role="ToRole_AssE_Component"><PropertyRef Name="Matnr"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="AssE_Material" sap:content-version="1"><End Type="ZUB_EGT_OMR_001_SRV.HeaderMaterial" Multiplicity="1" Role="FromRole_AssE_Material"/><End Type="ZUB_EGT_OMR_001_SRV.E_Material" Multiplicity="*" Role="ToRole_AssE_Material"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_AssE_Material"><PropertyRef Name="IpMatnr"/></Principal>
+					<Dependent Role="ToRole_AssE_Material"><PropertyRef Name="Matnr"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="AssCT_Matnr" sap:content-version="1"><End Type="ZUB_EGT_OMR_001_SRV.HeaderMaterial" Multiplicity="1" Role="FromRole_AssCT_Matnr"/><End Type="ZUB_EGT_OMR_001_SRV.E_Matnr" Multiplicity="*" Role="ToRole_AssCT_Matnr"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_AssCT_Matnr"><PropertyRef Name="IpMatnr"/></Principal>
+					<Dependent Role="ToRole_AssCT_Matnr"><PropertyRef Name="Matnr"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="AssE_Matnr" sap:content-version="1"><End Type="ZUB_EGT_OMR_001_SRV.HeaderMaterial" Multiplicity="1" Role="FromRole_AssE_Matnr"/><End Type="ZUB_EGT_OMR_001_SRV.E_Matnr" Multiplicity="*" Role="ToRole_AssE_Matnr"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_AssE_Matnr"><PropertyRef Name="IpMatnr"/></Principal>
+					<Dependent Role="ToRole_AssE_Matnr"><PropertyRef Name="Matnr"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<EntityContainer Name="ZUB_EGT_OMR_001_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx"><EntitySet Name="HeaderMaterialSet" EntityType="ZUB_EGT_OMR_001_SRV.HeaderMaterial" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="E_MatnrSet" EntityType="ZUB_EGT_OMR_001_SRV.E_Matnr" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:content-version="1"/><EntitySet Name="E_ComponentSet" EntityType="ZUB_EGT_OMR_001_SRV.E_Component" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="E_MaterialSet" EntityType="ZUB_EGT_OMR_001_SRV.E_Material" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+				<AssociationSet Name="AssE_MatnrSet" Association="ZUB_EGT_OMR_001_SRV.AssE_Matnr" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="HeaderMaterialSet" Role="FromRole_AssE_Matnr"/><End EntitySet="E_MatnrSet" Role="ToRole_AssE_Matnr"/></AssociationSet>
+				<AssociationSet Name="AssCT_MatnrSet" Association="ZUB_EGT_OMR_001_SRV.AssCT_Matnr" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="HeaderMaterialSet" Role="FromRole_AssCT_Matnr"/><End EntitySet="E_MatnrSet" Role="ToRole_AssCT_Matnr"/></AssociationSet>
+				<AssociationSet Name="AssE_MaterialSet" Association="ZUB_EGT_OMR_001_SRV.AssE_Material" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="HeaderMaterialSet" Role="FromRole_AssE_Material"/><End EntitySet="E_MaterialSet" Role="ToRole_AssE_Material"/></AssociationSet>
+				<AssociationSet Name="AssE_ComponentSet" Association="ZUB_EGT_OMR_001_SRV.AssE_Component" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="HeaderMaterialSet" Role="FromRole_AssE_Component"/><End EntitySet="E_ComponentSet" Role="ToRole_AssE_Component"/></AssociationSet>
+			</EntityContainer><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./sap/ZUB_EGT_OMR_001_SRV/$metadata"/><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="./sap/ZUB_EGT_OMR_001_SRV/$metadata"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>
